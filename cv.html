@@ -13,33 +13,48 @@
   :root {
     --bg-dark: #0b1120;
     --bg-light: #f9fafb;
-    --text-dark: #e2e8f0;
+    --text-dark: #f1f5f9;   /* sebelumnya e2e8f0, kini lebih terang */
     --text-light: #1e293b;
-    --accent: #64748b; /* silver-blue */
+    --accent: #94a3b8;      /* silver yang sedikit lebih muda */
   }
+
   [data-theme="dark"] body {
     background: var(--bg-dark);
     color: var(--text-dark);
   }
+
   [data-theme="light"] body {
     background: var(--bg-light);
     color: var(--text-light);
   }
+
   .section-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
     border-radius: 1rem;
     padding: 2rem;
   }
+
   .light .section-card {
-    background: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.9);
     border-color: rgba(0,0,0,0.1);
   }
-  .transition-all {
-    transition: all 0.4s ease;
+
+  /* Tambahan baru */
+  h2, h3 {
+    color: #60a5fa; /* teks judul lebih terang */
+  }
+
+  p, li {
+    color: #f1f5f9; /* isi teks lebih kontras */
+  }
+
+  .text-gray-300, .text-gray-400 {
+    color: #f1f5f9 !important;
   }
 </style>
+
 </head>
 
 <body class="transition-all" data-theme="dark">
