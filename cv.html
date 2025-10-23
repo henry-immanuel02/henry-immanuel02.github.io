@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Henry Immanuel Sihombing — CV</title>
 
-<!-- Tailwind -->
+<!-- Tailwind CSS -->
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 <!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,12 +13,13 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
+  /* ===== Base Theme Colors ===== */
   :root {
-    --bg-dark: #0a0f1c;
+    --bg-dark: #0c1220;
     --bg-light: #f8fafc;
-    --text-dark: #f9fafb;
+    --text-dark: #f8fafc;
     --text-light: #0f172a;
-    --accent: #60a5fa;
+    --accent: #3b82f6;
     --card-dark: #1e293b;
     --card-light: #ffffff;
   }
@@ -39,74 +40,86 @@
     transition: background 0.4s ease, color 0.4s ease;
   }
 
+  /* ===== Card ===== */
   .section-card {
     background-color: var(--card-dark);
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 1rem;
     padding: 2rem;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
     transition: all 0.4s ease;
   }
-
   body.light .section-card {
     background-color: var(--card-light);
-    border: 1px solid rgba(0,0,0,0.1);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    border-color: rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
 
+  /* ===== Typography ===== */
   h1, h2, h3 {
     color: var(--accent);
     font-weight: 600;
   }
-
   p, li {
     color: inherit;
   }
 
+  /* ===== Links ===== */
   a {
     color: var(--accent);
   }
-  a:hover { text-decoration: underline; }
+  a:hover {
+    text-decoration: underline;
+    color: #60a5fa;
+  }
 
-  footer { color: #94a3b8; }
+  /* ===== Footer ===== */
+  footer {
+    color: #9ca3af;
+  }
 
-  /* Fix Tailwind text utilities */
-  .text-gray-300, .text-gray-400, .text-gray-500 { color: inherit !important; }
+  /* ===== Force override Tailwind grays ===== */
+  .text-gray-200, .text-gray-300, .text-gray-400, .text-gray-500 {
+    color: inherit !important;
+  }
 </style>
 </head>
 
 <body data-theme="dark" class="transition-all">
 
-<!-- HEADER -->
-<header class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between py-8 px-6">
-  <div class="flex items-center space-x-4">
-    <img src="https://api.iconify.design/mdi:account-circle.svg?color=%23ffffff" alt="profile"
-         class="w-20 h-20 rounded-full shadow-md border border-gray-500">
-    <div>
-      <h1 class="text-3xl font-bold">Henry Immanuel Sihombing, S.Aktr.</h1>
-      <p class="text-sm opacity-80">Actuary Senior Officer | MNC Insurance</p>
-      <div class="text-sm opacity-70 space-x-2 mt-1">
-        <span>📍 Jakarta, Indonesia</span> |
-        <a href="mailto:henryimmanuel08@email.com">✉️ Email</a> |
-        <a href="https://linkedin.com/in/henry-immanuel-sihombing" target="_blank">LinkedIn</a>
+<!-- ===== HEADER ===== -->
+<header class="bg-gradient-to-r from-slate-800 to-slate-900 shadow-lg border-b border-slate-700">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between py-8 px-6">
+    <div class="flex items-center space-x-4">
+      <img src="https://api.iconify.design/mdi:account-circle.svg?color=%23ffffff" 
+           alt="profile" class="w-20 h-20 rounded-full shadow-lg border border-gray-500">
+      <div>
+        <h1 class="text-3xl font-bold text-white">Henry Immanuel Sihombing, S.Aktr.</h1>
+        <p class="text-blue-400 font-medium text-sm mt-1">Actuary Senior Officer | MNC Insurance</p>
+        <div class="text-sm text-gray-200 space-x-2 mt-2">
+          <span>📍 Jakarta, Indonesia</span> |
+          <a href="mailto:henryimmanuel08@email.com" class="text-blue-300 hover:underline">✉️ Email</a> |
+          <a href="https://linkedin.com/in/henry-immanuel-sihombing" target="_blank" class="text-blue-300 hover:underline">LinkedIn</a>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="mt-4 md:mt-0 flex space-x-3">
-    <button id="themeToggle" class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm shadow hover:bg-gray-600 transition">
-      🌗 Toggle Theme
-    </button>
-    <a href="CV-Henry Immanuel Sihombing.pdf" download
-       class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm shadow hover:bg-blue-700 transition">
-      📄 Download CV
-    </a>
+    <div class="mt-6 md:mt-0 flex space-x-3">
+      <button id="themeToggle"
+              class="bg-slate-700 text-white px-4 py-2 rounded-lg text-sm shadow hover:bg-slate-600 transition">
+        🌗 Toggle Theme
+      </button>
+      <a href="CV-Henry Immanuel Sihombing.pdf" download
+         class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm shadow hover:bg-blue-700 transition">
+        📄 Download CV
+      </a>
+    </div>
   </div>
 </header>
 
-<!-- MAIN -->
-<main class="max-w-6xl mx-auto px-6 space-y-12">
+<!-- ===== MAIN ===== -->
+<main class="max-w-6xl mx-auto px-6 space-y-12 mt-10">
 
-  <!-- SUMMARY -->
+  <!-- Summary -->
   <section class="section-card" data-aos="fade-up">
     <h2 class="text-2xl mb-3">Professional Summary</h2>
     <p>
@@ -116,7 +129,7 @@
     </p>
   </section>
 
-  <!-- SKILLS -->
+  <!-- Skills -->
   <section class="section-card" data-aos="fade-up">
     <h2 class="text-2xl mb-3">Technical Skills</h2>
     <div class="grid md:grid-cols-2 gap-6">
@@ -139,13 +152,13 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
+  <!-- Experience -->
   <section class="section-card" data-aos="fade-up">
     <h2 class="text-2xl mb-3">Experience</h2>
     <div class="space-y-6">
       <div>
         <h3 class="font-bold">Actuary Senior Officer — MNC Insurance</h3>
-        <p class="text-sm opacity-70 mb-2">2024 – Present</p>
+        <p class="text-sm opacity-80 mb-2">2024 – Present</p>
         <ul class="list-disc ml-5 space-y-1">
           <li>Performed premium valuation, reserve calculation, and IFRS 17 support.</li>
           <li>Developed Python-based technical reserving system per SEOJK 27/2017.</li>
@@ -154,14 +167,14 @@
       </div>
       <div>
         <h3 class="font-bold">Data Analyst — Algoritmics</h3>
-        <p class="text-sm opacity-70 mb-2">Feb 2024 – Oct 2024</p>
+        <p class="text-sm opacity-80 mb-2">Feb 2024 – Oct 2024</p>
         <ul class="list-disc ml-5 space-y-1">
           <li>Analyzed tutor retention & engagement data for management reports.</li>
         </ul>
       </div>
       <div>
         <h3 class="font-bold">Instructor — Algoritmics</h3>
-        <p class="text-sm opacity-70 mb-2">2023 – 2024</p>
+        <p class="text-sm opacity-80 mb-2">2023 – 2024</p>
         <ul class="list-disc ml-5 space-y-1">
           <li>Taught 40+ Python/OOP/data analysis classes across 3 countries.</li>
           <li>Recognized among top 10 “Superstar” tutors (200+ total).</li>
@@ -169,7 +182,7 @@
       </div>
       <div>
         <h3 class="font-bold">FP&A Intern — PT. ISS Indonesia</h3>
-        <p class="text-sm opacity-70 mb-2">Feb 2023 – Jul 2023</p>
+        <p class="text-sm opacity-80 mb-2">Feb 2023 – Jul 2023</p>
         <ul class="list-disc ml-5 space-y-1">
           <li>Created cost benchmarking tool using Python, Excel, and Tableau.</li>
           <li>Modeled cross-sectional & time-series data for pricing strategy.</li>
@@ -177,7 +190,7 @@
       </div>
       <div>
         <h3 class="font-bold">Teaching Assistant — Dept. of Mathematics, UB</h3>
-        <p class="text-sm opacity-70 mb-2">2021 – 2023</p>
+        <p class="text-sm opacity-80 mb-2">2021 – 2023</p>
         <ul class="list-disc ml-5 space-y-1">
           <li>Taught Calculus, Statistics, Actuarial Math, Risk Theory, Stochastic Analysis.</li>
         </ul>
@@ -185,7 +198,7 @@
     </div>
   </section>
 
-  <!-- EDUCATION -->
+  <!-- Education -->
   <section class="section-card" data-aos="fade-up">
     <h2 class="text-2xl mb-3">Education</h2>
     <ul class="list-disc ml-5 space-y-1">
@@ -194,7 +207,7 @@
     </ul>
   </section>
 
-  <!-- COURSES -->
+  <!-- Courses -->
   <section class="section-card" data-aos="fade-up">
     <h2 class="text-2xl mb-3">Certified Courses</h2>
     <ul class="list-disc ml-5 space-y-1">
@@ -204,7 +217,7 @@
     </ul>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- Projects -->
   <section class="section-card" data-aos="fade-up">
     <h2 class="text-2xl mb-3">Projects</h2>
     <ul class="list-disc ml-5 space-y-1">
@@ -213,7 +226,7 @@
     </ul>
   </section>
 
-  <!-- AWARDS -->
+  <!-- Awards -->
   <section class="section-card" data-aos="fade-up">
     <h2 class="text-2xl mb-3">Awards & Certifications</h2>
     <ul class="list-disc ml-5 space-y-1">
@@ -225,7 +238,7 @@
     </ul>
   </section>
 
-  <!-- ATTACHMENTS -->
+  <!-- Attachments -->
   <section class="section-card" data-aos="fade-up">
     <h2 class="text-2xl mb-3">Attachments</h2>
     <p>🔗 <a href="https://drive.google.com/drive/folders/1rCr01Uug635L__e1ehXnlpr7YLBTo6JW" target="_blank">
@@ -234,12 +247,12 @@
   </section>
 </main>
 
-<!-- FOOTER -->
+<!-- ===== FOOTER ===== -->
 <footer class="text-center text-sm py-6 mt-8">
   © 2025 Henry Immanuel Sihombing — Built with ❤️ using TailwindCSS & AOS
 </footer>
 
-<!-- Scripts -->
+<!-- ===== Scripts ===== -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
 AOS.init({ duration: 700 });
