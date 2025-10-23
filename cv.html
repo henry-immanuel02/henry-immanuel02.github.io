@@ -5,58 +5,69 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Henry Immanuel Sihombing — CV</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
   :root {
-    --bg-light: #ffffff;
-    --text-light: #0f172a;
-    --bg-dark: #0a0a0a;
-    --text-dark: #f8fafc;
-    --accent: #2563eb;
-  }
-  .highlight {
-  background: linear-gradient(120deg, #bfdbfe 0%, #93c5fd 100%);
-  padding: 0 6px;
-  border-radius: 4px;
-}
-  html[data-theme='light'] {
-    background-color: var(--bg-light);
-    color: var(--text-light);
+    --bg: #f8fafc;
+    --text: #1e293b;
+    --accent: #3b82f6;
+    --muted: #64748b;
+    --highlight: linear-gradient(120deg, #dbeafe 0%, #bfdbfe 100%);
   }
 
-  html[data-theme='dark'] {
-    background-color: var(--bg-dark);
-    color: var(--text-dark);
+  [data-theme="dark"] {
+    --bg: #0f172a;
+    --text: #f1f5f9;
+    --accent: #60a5fa;
+    --muted: #94a3b8;
+    --highlight: linear-gradient(120deg, #1e3a8a 0%, #2563eb 100%);
   }
 
   body {
     font-family: 'Inter', sans-serif;
-    line-height: 1.8;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
     margin: 0;
     padding: 2rem;
-    transition: background 0.4s, color 0.4s;
+    transition: background 0.3s ease, color 0.3s ease;
   }
 
   main {
-    max-width: 780px;
+    max-width: 850px;
     margin: 0 auto;
   }
 
+  header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
   h1 {
-    font-size: 2rem;
-    margin-bottom: 0.25rem;
-    color: var(--accent);
+    font-size: 1.8rem;
+    font-weight: 600;
+    display: inline-block;
+    background: var(--highlight);
+    border-radius: 6px;
+    padding: 0 6px;
   }
 
   h2 {
-    font-size: 1.4rem;
-    margin-top: 2.5rem;
+    font-size: 1.15rem;
+    font-weight: 600;
     color: var(--accent);
+    margin-top: 1.8rem;
+    margin-bottom: 0.3rem;
   }
 
   h3 {
     font-size: 1rem;
     color: var(--accent);
-    margin-top: 1rem;
+    margin: 0.8rem 0 0.2rem;
+  }
+
+  p, li {
+    font-size: 0.95rem;
   }
 
   a {
@@ -64,88 +75,86 @@
     text-decoration: none;
   }
 
-  a:hover {
-    text-decoration: underline;
-  }
+  a:hover { text-decoration: underline; }
 
   .meta {
-    color: gray;
+    color: var(--muted);
     font-size: 0.9rem;
   }
 
   ul {
-    margin-left: 1.25rem;
+    margin: 0.3rem 0 0.5rem 1.2rem;
   }
 
-  .top-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-    gap: 1rem;
+  .contact {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-top: 0.3rem;
+  }
+
+  .top-btns {
+    text-align: center;
+    margin-top: 1rem;
   }
 
   button, a.btn {
     border: none;
     border-radius: 6px;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
     cursor: pointer;
+    margin: 0 4px;
   }
 
   button {
+    background: var(--muted);
+    color: white;
+  }
+
+  button:hover { opacity: 0.85; }
+
+  a.btn {
     background: var(--accent);
     color: white;
   }
 
-  button:hover {
-    background: #1d4ed8;
-  }
-
-  a.btn {
-    background: gray;
-    color: white;
-  }
+  a.btn:hover { opacity: 0.9; }
 
   footer {
     text-align: center;
-    font-size: 0.85rem;
-    margin-top: 3rem;
-    color: gray;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 2rem;
   }
 </style>
 </head>
 
-<body>
+<body data-theme="light">
 <main>
-  <div class="top-actions">
-    <div>
-      <h1><span class="highlight">Henry Immanuel Sihombing, S.Aktr.</span></h1>
-      <p><strong>Actuary Senior Officer</strong> — MNC Insurance</p>
-      <p class="meta">
-        📍 Jakarta, Indonesia |
-        <a href="mailto:henryimmanuel08@email.com">Email</a> |
-        <a href="https://linkedin.com/in/henry-immanuel-sihombing" target="_blank">LinkedIn</a>
-      </p>
-    </div>
-    <div>
-      <button id="themeToggle">🌗 Toggle Mode</button>
+  <header>
+    <h1>Henry Immanuel Sihombing, S.Aktr.</h1>
+    <p><strong>Actuary Senior Officer</strong> — MNC Insurance</p>
+    <p class="contact">
+      📍 Jakarta, Indonesia · 
+      <a href="mailto:henryimmanuel08@email.com">Email</a> · 
+      <a href="https://linkedin.com/in/henry-immanuel-sihombing" target="_blank">LinkedIn</a>
+    </p>
+    <div class="top-btns">
+      <button id="themeToggle">🌗 Mode</button>
       <a href="CV-Henry Immanuel Sihombing.pdf" download class="btn">📄 Download CV</a>
     </div>
-  </div>
+  </header>
 
   <p>
-    Actuary senior officer at MNC Insurance with a strong background in pricing, reserving, statistical modeling, and machine learning.
-    Experienced in automating actuarial processes using Python, Excel, and R.
-    Passionate about data-driven decision-making and technical innovation.
+    Actuary senior officer at MNC Insurance with strong background in pricing, reserving, statistical modeling, and data automation.
+    Experienced in actuarial system design using Python and R, with focus on process efficiency and regulatory compliance.
   </p>
 
   <h2>Technical Skills</h2>
   <ul>
     <li><strong>Programming:</strong> Python (pandas, matplotlib, sklearn, chainladder), R, LaTeX</li>
     <li><strong>Tools:</strong> Excel, Tableau, Power BI, QlikSense, Gretl, SPSS, Minitab</li>
-    <li><strong>Actuarial & Analytics:</strong> Actuarial Modeling, Machine Learning, Risk Modeling, Forecasting</li>
+    <li><strong>Actuarial & Analytics:</strong> Pricing, Reserving, Risk Modeling, Forecasting</li>
     <li><strong>Languages:</strong> Indonesian (Native), English (TOEFL 530)</li>
   </ul>
 
@@ -154,15 +163,13 @@
   <p class="meta">2024 – Present</p>
   <ul>
     <li>Performed premium valuation, reserve calculation, and IFRS 17 support.</li>
-    <li>Developed Python-based technical reserving system per SEOJK 27/2017.</li>
-    <li>Led pricing for flagship products (MNC Travel Mudik, PA Group, etc.).</li>
+    <li>Developed Python-based reserving system per SEOJK 27/2017.</li>
+    <li>Led pricing for flagship products including PA Group and Travel Mudik.</li>
   </ul>
 
   <h3>Algoritmics — Data Analyst</h3>
   <p class="meta">Feb 2024 – Oct 2024</p>
-  <ul>
-    <li>Analyzed tutor retention & engagement data for management reports.</li>
-  </ul>
+  <ul><li>Analyzed tutor engagement and retention metrics for management reports.</li></ul>
 
   <h3>Algoritmics — Instructor</h3>
   <p class="meta">2023 – 2024</p>
@@ -175,14 +182,12 @@
   <p class="meta">Feb 2023 – Jul 2023</p>
   <ul>
     <li>Created cost benchmarking tool using Python, Excel, and Tableau.</li>
-    <li>Modeled cross-sectional & time-series data for pricing strategy.</li>
+    <li>Modeled time-series data for financial planning and pricing strategy.</li>
   </ul>
 
   <h3>University of Brawijaya — Teaching Assistant</h3>
   <p class="meta">2021 – 2023</p>
-  <ul>
-    <li>Taught Calculus, Statistics, Actuarial Math, Risk Theory, and Stochastic Analysis.</li>
-  </ul>
+  <ul><li>Taught Calculus, Statistics, Actuarial Math, Risk Theory, and Stochastic Analysis.</li></ul>
 
   <h2>Education</h2>
   <ul>
@@ -192,15 +197,15 @@
 
   <h2>Certified Courses</h2>
   <ul>
-    <li><strong>Actuarial Aspect on General Insurance</strong> — AAUI (Jun–Jul 2025)</li>
-    <li><strong>Heuristic Optimization</strong> — Indonesian Mathematician Society (Jun–Aug 2023)</li>
-    <li><strong>Financial Mathematics: Option and Portfolio Selection</strong> — IMS (Jul 2021)</li>
+    <li>Actuarial Aspect on General Insurance — AAUI (Jun–Jul 2025)</li>
+    <li>Heuristic Optimization — Indonesian Mathematician Society (2023)</li>
+    <li>Financial Mathematics: Option and Portfolio Selection — IMS (2021)</li>
   </ul>
 
   <h2>Projects</h2>
   <ul>
-    <li><strong>Actuarial Valuation Models for Investment Asset Value Insurance</strong> (2023–2024)</li>
-    <li><strong>Joint Life & Multi-State Insurance Valuation</strong> (2022)</li>
+    <li>Actuarial Valuation Models for Investment Asset Value Insurance (2023–2024)</li>
+    <li>Joint Life & Multi-State Insurance Valuation (2022)</li>
   </ul>
 
   <h2>Awards & Certifications</h2>
@@ -213,25 +218,20 @@
   </ul>
 
   <h2>Attachments</h2>
-  <p>
-    🔗 <a href="https://drive.google.com/drive/folders/1rCr01Uug635L__e1ehXnlpr7YLBTo6JW" target="_blank">
-      Google Drive Folder (Projects & Certificates)
-    </a>
-  </p>
+  <p>🔗 <a href="https://drive.google.com/drive/folders/1rCr01Uug635L__e1ehXnlpr7YLBTo6JW" target="_blank">Google Drive Folder (Projects & Certificates)</a></p>
 
   <footer>
-    © 2025 Henry Immanuel Sihombing — Built with HTML & CSS
+    © 2025 Henry Immanuel Sihombing — Built with pure HTML & CSS
   </footer>
 </main>
 
 <script>
   const toggle = document.getElementById('themeToggle');
   toggle.addEventListener('click', () => {
-    const html = document.documentElement;
-    const theme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', theme);
+    const html = document.body;
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
   });
-  document.documentElement.setAttribute('data-theme', 'light');
 </script>
 </body>
 </html>
