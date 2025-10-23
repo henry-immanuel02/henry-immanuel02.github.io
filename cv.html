@@ -1,153 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Henry Immanuel Sihombing — CV</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #0f172a; /* dark navy */
-      color: #e2e8f0; /* light gray */
-      font-family: 'Inter', sans-serif;
-    }
-    .accent {
-      color: #3b82f6; /* blue-500 */
-    }
-    a { color: #60a5fa; }
-    a:hover { text-decoration: underline; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Henry Immanuel Sihombing — CV</title>
+
+<!-- Tailwind -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<!-- Framer Motion replacement (AOS) -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #0b1120;
+    --bg-light: #f9fafb;
+    --text-dark: #e2e8f0;
+    --text-light: #1e293b;
+    --accent: #64748b; /* silver-blue */
+  }
+  [data-theme="dark"] body {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+  }
+  [data-theme="light"] body {
+    background: var(--bg-light);
+    color: var(--text-light);
+  }
+  .section-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2rem;
+  }
+  .light .section-card {
+    background: rgba(255,255,255,0.8);
+    border-color: rgba(0,0,0,0.1);
+  }
+  .transition-all {
+    transition: all 0.4s ease;
+  }
+</style>
 </head>
-<body class="p-6 md:p-10">
 
-  <!-- Header -->
-  <header class="max-w-5xl mx-auto mb-10">
-    <h1 class="text-3xl md:text-4xl font-bold mb-1">Henry Immanuel Sihombing, S.Aktr.</h1>
-    <p class="text-blue-400 text-sm md:text-base mb-2">Actuary Senior Officer | MNC Insurance</p>
-    <div class="text-gray-400 text-sm space-x-2">
-      <span>📍 Jakarta, Indonesia</span> |
-      <a href="mailto:henryimmanuel08@email.com">✉️ henryimmanuel08@email.com</a> |
-      <a href="https://linkedin.com/in/henry-immanuel-sihombing" target="_blank">LinkedIn</a>
+<body class="transition-all" data-theme="dark">
+
+<!-- HEADER -->
+<header class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between py-8 px-6">
+  <div class="flex items-center space-x-4">
+    <img src="https://api.iconify.design/mdi:account-circle.svg?color=%23cbd5e1" alt="profile"
+         class="w-20 h-20 rounded-full shadow-md border border-gray-500">
+    <div>
+      <h1 class="text-3xl font-bold">Henry Immanuel Sihombing, S.Aktr.</h1>
+      <p class="text-accent text-sm">Actuary Senior Officer | MNC Insurance</p>
+      <div class="text-sm text-gray-400 space-x-2 mt-1">
+        <span>📍 Jakarta, Indonesia</span> |
+        <a href="mailto:henryimmanuel08@email.com" class="hover:underline">✉️ Email</a> |
+        <a href="https://linkedin.com/in/henry-immanuel-sihombing" target="_blank" class="hover:underline">LinkedIn</a>
+      </div>
     </div>
-    <a href="CV-Henry Immanuel Sihombing.pdf" download class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-md shadow hover:bg-blue-700 transition">
-      📄 Download Full CV (PDF)
+  </div>
+  <div class="mt-4 md:mt-0 flex space-x-3">
+    <button id="themeToggle" class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm shadow hover:bg-gray-600 transition">
+      🌗 Toggle Theme
+    </button>
+    <a href="CV-Henry Immanuel Sihombing.pdf" download class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm shadow hover:bg-blue-700 transition">
+      📄 Download CV
     </a>
-  </header>
+  </div>
+</header>
 
-  <!-- Summary -->
-  <section class="max-w-5xl mx-auto mb-10">
-    <h2 class="text-2xl font-semibold text-blue-400 mb-3">Professional Summary</h2>
+<!-- MAIN CONTENT -->
+<main class="max-w-6xl mx-auto px-6 space-y-12">
+
+  <!-- SUMMARY -->
+  <section class="section-card" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-3">Professional Summary</h2>
     <p class="text-gray-300 leading-relaxed">
       Actuary senior officer level at MNC Insurance with strong background in pricing, reserving, statistical modeling, and machine learning.
-      Experienced in automating actuarial processes using Python, Excel, and R. Passionate about data-driven decision-making and technical innovation.
+      Experienced in automating actuarial processes using Python, Excel, and R.
+      Passionate about data-driven decision-making and technical innovation.
     </p>
   </section>
 
-  <!-- Skills -->
-  <section class="max-w-5xl mx-auto mb-10">
-    <h2 class="text-2xl font-semibold text-blue-400 mb-3">Technical Skills</h2>
-    <div class="grid md:grid-cols-2 gap-4 text-gray-300">
+  <!-- SKILLS -->
+  <section class="section-card" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-3">Technical Skills</h2>
+    <div class="grid md:grid-cols-2 gap-6 text-gray-300">
       <div>
-        <p class="font-semibold accent">Programming</p>
-        <p>Python (numpy, pandas, matplotlib, seaborn, sklearn, statsmodels, chainladder, PyQt5), R (ggplot2, ChainLadder), LaTeX</p>
+        <h3 class="font-semibold text-accent mb-1">Programming</h3>
+        <p>Python (pandas, matplotlib, sklearn, chainladder), R, LaTeX</p>
       </div>
       <div>
-        <p class="font-semibold accent">Tools</p>
+        <h3 class="font-semibold text-accent mb-1">Tools</h3>
         <p>Excel, Tableau, Power BI, QlikSense, Gretl, SPSS, Minitab</p>
       </div>
       <div>
-        <p class="font-semibold accent">Actuarial & Analytics</p>
-        <p>Actuarial Modeling, Machine Learning, Risk Modeling, Forecasting, Optimization</p>
+        <h3 class="font-semibold text-accent mb-1">Actuarial & Analytics</h3>
+        <p>Actuarial Modeling, Machine Learning, Risk Modeling, Forecasting</p>
       </div>
       <div>
-        <p class="font-semibold accent">Languages</p>
+        <h3 class="font-semibold text-accent mb-1">Languages</h3>
         <p>Indonesian (Native), English (TOEFL 530)</p>
       </div>
     </div>
   </section>
 
-  <!-- Experience -->
-  <section class="max-w-5xl mx-auto mb-10">
-    <h2 class="text-2xl font-semibold text-blue-400 mb-3">Experience</h2>
-    <div class="space-y-6 border-l-2 border-blue-500 pl-6">
-
+  <!-- EXPERIENCE -->
+  <section class="section-card" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-3">Experience</h2>
+    <div class="space-y-6">
       <div>
-        <h3 class="font-bold text-lg">Actuary Senior Officer — MNC Insurance</h3>
+        <h3 class="font-bold">Actuary Senior Officer — MNC Insurance</h3>
         <p class="text-gray-400 text-sm mb-2">2024 – Present</p>
-        <ul class="list-disc ml-5 text-gray-300 text-sm space-y-1">
-          <li>Performed premium valuation, reserve calculation, and IFRS 17 support (PAA-based LRC & LIC valuation).</li>
-          <li>Developed technical reserving system in Python based on SEOJK No. 27/SEOJK.05/2017.</li>
-          <li>Led pricing for flagship products (MNC Travel Mudik, PA Guru & Siswa, PA Group Insurance, MV Partnership).</li>
+        <ul class="list-disc ml-5 text-sm space-y-1">
+          <li>Performed premium valuation, reserve calculation, and IFRS 17 support.</li>
+          <li>Developed Python-based technical reserving system per SEOJK 27/2017.</li>
+          <li>Led pricing for flagship products (MNC Travel Mudik, PA Group, etc.).</li>
         </ul>
       </div>
-
       <div>
-        <h3 class="font-bold text-lg">Data Analyst, Quality Control — Algoritmics</h3>
+        <h3 class="font-bold">Data Analyst — Algoritmics</h3>
         <p class="text-gray-400 text-sm mb-2">Feb 2024 – Oct 2024</p>
-        <ul class="list-disc ml-5 text-gray-300 text-sm space-y-1">
-          <li>Analyzed tutor performance via retention and engagement data.</li>
-          <li>Reported actionable insights to management for academic improvement.</li>
+        <ul class="list-disc ml-5 text-sm space-y-1">
+          <li>Analyzed tutor retention & engagement data for management reports.</li>
         </ul>
       </div>
-
       <div>
-        <h3 class="font-bold text-lg">Instructor — Algoritmics</h3>
+        <h3 class="font-bold">Instructor — Algoritmics</h3>
         <p class="text-gray-400 text-sm mb-2">2023 – 2024</p>
-        <ul class="list-disc ml-5 text-gray-300 text-sm space-y-1">
-          <li>Taught 40+ weekly classes on Python programming, OOP, and data analysis for students in Indonesia, Singapore, and Australia.</li>
-          <li>Named among top 10 “Superstar” tutors (out of 200+).</li>
+        <ul class="list-disc ml-5 text-sm space-y-1">
+          <li>Taught 40+ Python/OOP/data analysis classes across 3 countries.</li>
+          <li>Recognized among top 10 “Superstar” tutors (200+ total).</li>
         </ul>
       </div>
-
       <div>
-        <h3 class="font-bold text-lg">FP&A Intern — PT. ISS Indonesia</h3>
+        <h3 class="font-bold">FP&A Intern — PT. ISS Indonesia</h3>
         <p class="text-gray-400 text-sm mb-2">Feb 2023 – Jul 2023</p>
-        <ul class="list-disc ml-5 text-gray-300 text-sm space-y-1">
-          <li>Built spatio-temporal cost benchmarking tool using Python, Excel, and Tableau.</li>
-          <li>Conducted pricing support using cross-sectional and time-series data modeling.</li>
+        <ul class="list-disc ml-5 text-sm space-y-1">
+          <li>Created cost benchmarking tool using Python, Excel, and Tableau.</li>
+          <li>Modeled cross-sectional & time-series data for pricing strategy.</li>
         </ul>
       </div>
-
       <div>
-        <h3 class="font-bold text-lg">Data Processing Intern — KPPBC TMP Belawan</h3>
-        <p class="text-gray-400 text-sm mb-2">Jan 2023 – Feb 2023</p>
-        <ul class="list-disc ml-5 text-gray-300 text-sm space-y-1">
-          <li>Processed and visualized customs data using Excel and Python (xlwings).</li>
-          <li>Developed SARIMAX and Poisson models for forecasting in R & Python.</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="font-bold text-lg">Teaching Assistant & Tutor — Dept. of Mathematics, UB</h3>
+        <h3 class="font-bold">Teaching Assistant — Dept. of Mathematics, UB</h3>
         <p class="text-gray-400 text-sm mb-2">2021 – 2023</p>
-        <ul class="list-disc ml-5 text-gray-300 text-sm space-y-1">
-          <li>Assisted in teaching Calculus, Statistics, Actuarial Math, and Risk Theory courses.</li>
+        <ul class="list-disc ml-5 text-sm space-y-1">
+          <li>Taught Calculus, Statistics, Actuarial Math, Risk Theory, Stochastic Analysis.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Education -->
-  <section class="max-w-5xl mx-auto mb-10">
-    <h2 class="text-2xl font-semibold text-blue-400 mb-3">Education</h2>
-    <ul class="list-disc ml-5 text-gray-300">
-      <li><strong>University of Brawijaya (UB)</strong> — B.Sc. in Actuarial Science / Applied Math (2020–2024) — GPA: 3.80/4.00</li>
-      <li><strong>SMAN 3 Tarutung</strong> — Senior High School (2017–2020) — Final Score: A</li>
-    </ul>
-  </section>
-
-  <!-- Projects -->
-  <section class="max-w-5xl mx-auto mb-10">
-    <h2 class="text-2xl font-semibold text-blue-400 mb-3">Projects</h2>
+  <!-- EDUCATION -->
+  <section class="section-card" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-3">Education</h2>
     <ul class="list-disc ml-5 text-gray-300 space-y-1">
-      <li><strong>Actuarial Valuation Models for Investment Asset Value Insurance</strong> (Aug 2023 – Apr 2024) — Developed stochastic pricing & reserving models using Python & R.</li>
-      <li><strong>Joint Life & Multi-State Insurance Valuation</strong> (Aug – Dec 2022) — Built actuarial & stochastic models for multi-state life insurance. Final grade: A.</li>
+      <li><strong>University of Brawijaya</strong> — B.Sc. Actuarial Science (2020–2024) | GPA 3.80/4.00</li>
+      <li><strong>SMAN 3 Tarutung</strong> — Senior High School (2017–2020) | Final Score: A</li>
     </ul>
   </section>
 
-  <!-- Awards -->
-  <section class="max-w-5xl mx-auto mb-10">
-    <h2 class="text-2xl font-semibold text-blue-400 mb-3">Awards & Certifications</h2>
+  <!-- CERTIFIED COURSES -->
+  <section class="section-card" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-3">Certified Courses</h2>
+    <ul class="list-disc ml-5 text-gray-300 space-y-1">
+      <li><strong>Actuarial Aspect on General Insurance</strong> — AAUI (Jun–Jul 2025)</li>
+      <li><strong>Heuristic Optimization</strong> — Indonesian Mathematician Society (Jun–Aug 2023)</li>
+      <li><strong>Financial Mathematics: Option and Portfolio Selection</strong> — IMS (Jul 2021)</li>
+    </ul>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section-card" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-3">Projects</h2>
+    <ul class="list-disc ml-5 text-gray-300 space-y-1">
+      <li><strong>Actuarial Valuation Models for Investment Asset Value Insurance</strong> (2023–2024) — Pricing & reserving models using stochastic forecasting.</li>
+      <li><strong>Joint Life & Multi-State Insurance Valuation</strong> (2022) — Actuarial and stochastic modeling for multi-state life insurance.</li>
+    </ul>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="section-card" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-3">Awards & Certifications</h2>
     <ul class="list-disc ml-5 text-gray-300 space-y-1">
       <li>PAI Exams: CF1–CF4, TA1–TA3</li>
       <li>AAMAI Certified in General Insurance 001</li>
@@ -157,9 +191,32 @@
     </ul>
   </section>
 
-  <!-- Footer -->
-  <footer class="text-center text-gray-500 text-sm py-6 border-t border-gray-700 mt-8">
-    © 2025 Henry Immanuel Sihombing — Built with ❤️ using Tailwind CSS
-  </footer>
+  <!-- ATTACHMENTS -->
+  <section class="section-card" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-3">Attachments</h2>
+    <p>🔗 <a href="https://drive.google.com/drive/folders/1rCr01Uug635L__e1ehXnlpr7YLBTo6JW" target="_blank" class="text-blue-400 hover:underline">
+      Google Drive Folder (Projects & Certificates)
+    </a></p>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="text-center text-gray-500 text-sm py-6 mt-8">
+  © 2025 Henry Immanuel Sihombing — Built with ❤️ using TailwindCSS & AOS
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 800 });
+const toggle = document.getElementById('themeToggle');
+toggle.addEventListener('click', () => {
+  const html = document.querySelector('html');
+  const theme = html.getAttribute('data-theme');
+  html.setAttribute('data-theme', theme === 'dark' ? 'light' : 'dark');
+  document.body.classList.toggle('light');
+});
+</script>
 </body>
 </html>
