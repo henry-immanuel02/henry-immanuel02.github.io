@@ -10,50 +10,84 @@
 <!-- Framer Motion replacement (AOS) -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <style>
+  /* Base Theme */
   :root {
-    --bg-dark: #0b1120;
+    --bg-dark: #0a0f1c; /* lebih gelap dari sebelumnya */
     --bg-light: #f9fafb;
-    --text-dark: #f1f5f9;   /* sebelumnya e2e8f0, kini lebih terang */
+    --text-dark: #ffffff;  /* ganti ke pure white */
     --text-light: #1e293b;
-    --accent: #94a3b8;      /* silver yang sedikit lebih muda */
+    --accent: #93c5fd;     /* biru terang (kontras tinggi) */
+    --card-bg: rgba(255,255,255,0.12); /* card lebih terang */
+    --card-border: rgba(255,255,255,0.25);
   }
 
-  [data-theme="dark"] body {
-    background: var(--bg-dark);
+  html[data-theme="dark"] body {
+    background-color: var(--bg-dark);
     color: var(--text-dark);
   }
 
-  [data-theme="light"] body {
-    background: var(--bg-light);
+  html[data-theme="light"] body {
+    background-color: var(--bg-light);
     color: var(--text-light);
   }
 
-  .section-card {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    backdrop-filter: blur(12px);
-    border-radius: 1rem;
-    padding: 2rem;
+  body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
   }
 
-  .light .section-card {
-    background: rgba(255,255,255,0.9);
+  /* Section card */
+  .section-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(18px);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  body.light .section-card {
+    background: rgba(255,255,255,0.95);
     border-color: rgba(0,0,0,0.1);
   }
 
-  /* Tambahan baru */
-  h2, h3 {
-    color: #60a5fa; /* teks judul lebih terang */
+  /* Headings */
+  h1, h2, h3 {
+    color: var(--accent);
+    font-weight: 600;
   }
 
-  p, li {
-    color: #f1f5f9; /* isi teks lebih kontras */
+  /* Text blocks */
+  p, li, ul {
+    color: var(--text-dark);
   }
 
-  .text-gray-300, .text-gray-400 {
-    color: #f1f5f9 !important;
+  /* Footer */
+  footer {
+    color: #94a3b8; /* silver */
+  }
+
+  /* Fix Tailwind text colors */
+  .text-gray-300, .text-gray-400, .text-gray-500 {
+    color: var(--text-dark) !important;
+  }
+
+  /* Links */
+  a {
+    color: #60a5fa;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: #93c5fd;
+  }
+
+  /* Button tweaks */
+  #themeToggle {
+    border: 1px solid rgba(255,255,255,0.25);
   }
 </style>
+
 
 </head>
 
