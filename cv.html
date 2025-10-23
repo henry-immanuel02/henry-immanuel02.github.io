@@ -5,36 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Henry Immanuel Sihombing — CV</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
 <style>
   :root {
-    --bg: #f8fafc;
+    --v1: #440154; /* deep purple */
+    --v2: #3b528b; /* indigo */
+    --v3: #21918c; /* teal */
+    --v4: #5ec962; /* lime green */
+    --v5: #fde725; /* yellow green */
     --text: #1e293b;
-    --accent: #3b82f6;
-    --muted: #64748b;
-    --highlight: linear-gradient(120deg, #dbeafe 0%, #bfdbfe 100%);
+    --bg: #fafafa;
   }
 
   [data-theme="dark"] {
-    --bg: #0f172a;
+    --bg: #0b0b0b;
     --text: #f1f5f9;
-    --accent: #60a5fa;
-    --muted: #94a3b8;
-    --highlight: linear-gradient(120deg, #1e3a8a 0%, #2563eb 100%);
   }
 
   body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg);
+    background: var(--bg);
     color: var(--text);
-    line-height: 1.6;
     margin: 0;
     padding: 2rem;
-    transition: background 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
+    transition: background 0.4s, color 0.4s;
   }
 
   main {
-    max-width: 850px;
+    max-width: 880px;
     margin: 0 auto;
   }
 
@@ -44,56 +42,48 @@
   }
 
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     font-weight: 600;
-    display: inline-block;
-    background: var(--highlight);
-    border-radius: 6px;
-    padding: 0 6px;
+    background: linear-gradient(90deg, var(--v1), var(--v3), var(--v5));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.3rem;
   }
 
   h2 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--accent);
-    margin-top: 1.8rem;
+    color: var(--v3);
+    font-size: 1.1rem;
+    margin-top: 2rem;
     margin-bottom: 0.3rem;
   }
 
   h3 {
-    font-size: 1rem;
-    color: var(--accent);
-    margin: 0.8rem 0 0.2rem;
-  }
-
-  p, li {
-    font-size: 0.95rem;
+    color: var(--v2);
+    margin-bottom: 0.2rem;
   }
 
   a {
-    color: var(--accent);
+    color: var(--v3);
     text-decoration: none;
   }
 
   a:hover { text-decoration: underline; }
 
   .meta {
-    color: var(--muted);
     font-size: 0.9rem;
+    color: gray;
   }
 
   ul {
-    margin: 0.3rem 0 0.5rem 1.2rem;
+    margin-left: 1.2rem;
   }
 
   .contact {
     font-size: 0.9rem;
-    color: var(--muted);
-    margin-top: 0.3rem;
+    color: gray;
   }
 
   .top-btns {
-    text-align: center;
     margin-top: 1rem;
   }
 
@@ -107,24 +97,39 @@
   }
 
   button {
-    background: var(--muted);
+    background: var(--v3);
     color: white;
   }
 
-  button:hover { opacity: 0.85; }
+  button:hover { background: var(--v2); }
 
   a.btn {
-    background: var(--accent);
-    color: white;
+    background: var(--v4);
+    color: #1e293b;
+    font-weight: 500;
   }
 
-  a.btn:hover { opacity: 0.9; }
+  a.btn:hover { opacity: 0.85; }
+
+  section {
+    margin-top: 1.2rem;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
 
   footer {
     text-align: center;
     font-size: 0.8rem;
-    color: var(--muted);
+    color: gray;
     margin-top: 2rem;
+  }
+
+  @media (max-width: 700px) {
+    .grid-2 { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -135,7 +140,7 @@
     <h1>Henry Immanuel Sihombing, S.Aktr.</h1>
     <p><strong>Actuary Senior Officer</strong> — MNC Insurance</p>
     <p class="contact">
-      📍 Jakarta, Indonesia · 
+      📍 Jakarta · 
       <a href="mailto:henryimmanuel08@email.com">Email</a> · 
       <a href="https://linkedin.com/in/henry-immanuel-sihombing" target="_blank">LinkedIn</a>
     </p>
@@ -146,91 +151,102 @@
   </header>
 
   <p>
-    Actuary senior officer at MNC Insurance with strong background in pricing, reserving, statistical modeling, and data automation.
-    Experienced in actuarial system design using Python and R, with focus on process efficiency and regulatory compliance.
+    Actuary and data professional with expertise in pricing, reserving, and actuarial automation using Python.
+    Experienced in regulatory reserving, IFRS 17 analysis, and technical modeling.
   </p>
 
-  <h2>Technical Skills</h2>
-  <ul>
-    <li><strong>Programming:</strong> Python (pandas, matplotlib, sklearn, chainladder), R, LaTeX</li>
-    <li><strong>Tools:</strong> Excel, Tableau, Power BI, QlikSense, Gretl, SPSS, Minitab</li>
-    <li><strong>Actuarial & Analytics:</strong> Pricing, Reserving, Risk Modeling, Forecasting</li>
-    <li><strong>Languages:</strong> Indonesian (Native), English (TOEFL 530)</li>
-  </ul>
+  <section class="grid-2">
+    <div>
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><strong>Programming:</strong> Python, R, LaTeX</li>
+        <li><strong>Libraries:</strong> pandas, matplotlib, scikit-learn, chainladder</li>
+        <li><strong>Tools:</strong> Excel, Power BI, Tableau, QlikSense</li>
+        <li><strong>Languages:</strong> Indonesian, English (TOEFL 530)</li>
+      </ul>
 
-  <h2>Experience</h2>
-  <h3>MNC Insurance — Actuary Senior Officer</h3>
-  <p class="meta">2024 – Present</p>
-  <ul>
-    <li>Performed premium valuation, reserve calculation, and IFRS 17 support.</li>
-    <li>Developed Python-based reserving system per SEOJK 27/2017.</li>
-    <li>Led pricing for flagship products including PA Group and Travel Mudik.</li>
-  </ul>
+      <h2>Education</h2>
+      <ul>
+        <li><strong>University of Brawijaya</strong> — B.Sc. Actuarial Science, GPA 3.80/4.00 (2020–2024)</li>
+        <li><strong>SMAN 3 Tarutung</strong> — Senior High School (2017–2020)</li>
+      </ul>
 
-  <h3>Algoritmics — Data Analyst</h3>
-  <p class="meta">Feb 2024 – Oct 2024</p>
-  <ul><li>Analyzed tutor engagement and retention metrics for management reports.</li></ul>
+      <h2>Courses</h2>
+      <ul>
+        <li>AAUI — Actuarial Aspect on General Insurance (2025)</li>
+        <li>Indonesian Mathematical Society — Heuristic Optimization (2023)</li>
+        <li>IMS — Financial Mathematics: Options & Portfolio (2021)</li>
+      </ul>
+    </div>
 
-  <h3>Algoritmics — Instructor</h3>
-  <p class="meta">2023 – 2024</p>
-  <ul>
-    <li>Taught 40+ Python/OOP/data analysis classes across 3 countries.</li>
-    <li>Recognized among top 10 “Superstar” tutors (200+ total).</li>
-  </ul>
+    <div>
+      <h2>Experience</h2>
 
-  <h3>PT. ISS Indonesia — FP&A Intern</h3>
-  <p class="meta">Feb 2023 – Jul 2023</p>
-  <ul>
-    <li>Created cost benchmarking tool using Python, Excel, and Tableau.</li>
-    <li>Modeled time-series data for financial planning and pricing strategy.</li>
-  </ul>
+      <h3>MNC Insurance — Actuary Senior Officer</h3>
+      <p class="meta">2024 – Present</p>
+      <ul>
+        <li>Performed pricing, reserving, and IFRS 17 support.</li>
+        <li>Developed reserving system using Python per SEOJK 27/2017.</li>
+      </ul>
 
-  <h3>University of Brawijaya — Teaching Assistant</h3>
-  <p class="meta">2021 – 2023</p>
-  <ul><li>Taught Calculus, Statistics, Actuarial Math, Risk Theory, and Stochastic Analysis.</li></ul>
+      <h3>Algoritmics — Data Analyst</h3>
+      <p class="meta">2024</p>
+      <ul>
+        <li>Analyzed tutor retention and engagement data.</li>
+      </ul>
 
-  <h2>Education</h2>
-  <ul>
-    <li><strong>University of Brawijaya</strong> — B.Sc. Actuarial Science (2020–2024) | GPA 3.80/4.00</li>
-    <li><strong>SMAN 3 Tarutung</strong> — Senior High School (2017–2020)</li>
-  </ul>
+      <h3>Algoritmics — Instructor</h3>
+      <p class="meta">2023–2024</p>
+      <ul>
+        <li>Taught 40+ data & OOP classes in 3 countries.</li>
+      </ul>
 
-  <h2>Certified Courses</h2>
-  <ul>
-    <li>Actuarial Aspect on General Insurance — AAUI (Jun–Jul 2025)</li>
-    <li>Heuristic Optimization — Indonesian Mathematician Society (2023)</li>
-    <li>Financial Mathematics: Option and Portfolio Selection — IMS (2021)</li>
-  </ul>
+      <h3>PT. ISS Indonesia — FP&A Intern</h3>
+      <p class="meta">2023</p>
+      <ul>
+        <li>Created cost benchmarking tool with Python & Tableau.</li>
+      </ul>
 
-  <h2>Projects</h2>
-  <ul>
-    <li>Actuarial Valuation Models for Investment Asset Value Insurance (2023–2024)</li>
-    <li>Joint Life & Multi-State Insurance Valuation (2022)</li>
-  </ul>
+      <h3>University of Brawijaya — Teaching Assistant</h3>
+      <p class="meta">2021–2023</p>
+      <ul>
+        <li>Taught Calculus, Statistics, Actuarial Math, Risk Theory.</li>
+      </ul>
+    </div>
+  </section>
 
-  <h2>Awards & Certifications</h2>
-  <ul>
-    <li>PAI Exams: CF1–CF4, TA1–TA3</li>
-    <li>AAMAI Certified in General Insurance 001</li>
-    <li>Gold Medalist — Student Science Competition (2021)</li>
-    <li>Gold Medalist — Student Science Olympiad (2020)</li>
-    <li>1st Winner — OSN Mathematics City Level (2018)</li>
-  </ul>
+  <section>
+    <h2>Projects</h2>
+    <ul>
+      <li>Actuarial Valuation Models for Investment Asset Value Insurance (2023–2024)</li>
+      <li>Joint Life & Multi-State Insurance Valuation (2022)</li>
+    </ul>
 
-  <h2>Attachments</h2>
-  <p>🔗 <a href="https://drive.google.com/drive/folders/1rCr01Uug635L__e1ehXnlpr7YLBTo6JW" target="_blank">Google Drive Folder (Projects & Certificates)</a></p>
+    <h2>Awards</h2>
+    <ul>
+      <li>PAI Exams: CF1–CF4, TA1–TA3</li>
+      <li>AAMAI Certified in General Insurance 001</li>
+      <li>Gold Medalist — Student Science Competition (2021)</li>
+      <li>Gold Medalist — Student Science Olympiad (2020)</li>
+    </ul>
+
+    <h2>Attachments</h2>
+    <p>🔗 <a href="https://drive.google.com/drive/folders/1rCr01Uug635L__e1ehXnlpr7YLBTo6JW" target="_blank">
+      Google Drive (Projects & Certificates)
+    </a></p>
+  </section>
 
   <footer>
-    © 2025 Henry Immanuel Sihombing — Built with pure HTML & CSS
+    © 2025 Henry Immanuel Sihombing — Viridis Theme
   </footer>
 </main>
 
 <script>
   const toggle = document.getElementById('themeToggle');
   toggle.addEventListener('click', () => {
-    const html = document.body;
-    const isDark = html.getAttribute('data-theme') === 'dark';
-    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    const body = document.body;
+    const dark = body.getAttribute('data-theme') === 'dark';
+    body.setAttribute('data-theme', dark ? 'light' : 'dark');
   });
 </script>
 </body>
