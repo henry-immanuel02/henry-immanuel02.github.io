@@ -9,16 +9,16 @@
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 <!-- Framer Motion replacement (AOS) -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<style>
-  /* Base Theme */
+
+  <style>
   :root {
-    --bg-dark: #0a0f1c; /* lebih gelap dari sebelumnya */
+    --bg-dark: #0a0f1c;            /* latar belakang utama */
     --bg-light: #f9fafb;
-    --text-dark: #ffffff;  /* ganti ke pure white */
+    --text-dark: #ffffff;          /* teks di mode gelap */
     --text-light: #1e293b;
-    --accent: #93c5fd;     /* biru terang (kontras tinggi) */
-    --card-bg: rgba(255,255,255,0.12); /* card lebih terang */
-    --card-border: rgba(255,255,255,0.25);
+    --accent: #93c5fd;             /* biru muda */
+    --card-bg-dark: rgba(15, 23, 42, 0.9); /* card lebih gelap dan solid */
+    --card-bg-light: rgba(255,255,255,0.95);
   }
 
   html[data-theme="dark"] body {
@@ -36,43 +36,37 @@
     line-height: 1.6;
   }
 
-  /* Section card */
+  /* --- CARD --- */
   .section-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    backdrop-filter: blur(18px);
+    background: var(--card-bg-dark);
+    border: 1px solid rgba(255,255,255,0.25);
     border-radius: 1rem;
     padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     transition: background 0.3s ease, color 0.3s ease;
   }
 
   body.light .section-card {
-    background: rgba(255,255,255,0.95);
+    background: var(--card-bg-light);
     border-color: rgba(0,0,0,0.1);
   }
 
-  /* Headings */
+  /* --- TEXT COLORS --- */
   h1, h2, h3 {
     color: var(--accent);
     font-weight: 600;
   }
 
-  /* Text blocks */
-  p, li, ul {
-    color: var(--text-dark);
+  p, li, ul, ol, span, strong {
+    color: #ffffff; /* putih solid biar kontras di semua card */
   }
 
-  /* Footer */
-  footer {
-    color: #94a3b8; /* silver */
+  /* Fix semua class tailwind abu-abu */
+  .text-gray-200, .text-gray-300, .text-gray-400, .text-gray-500 {
+    color: #ffffff !important;
   }
 
-  /* Fix Tailwind text colors */
-  .text-gray-300, .text-gray-400, .text-gray-500 {
-    color: var(--text-dark) !important;
-  }
-
-  /* Links */
+  /* --- LINKS --- */
   a {
     color: #60a5fa;
     text-decoration: none;
@@ -82,9 +76,9 @@
     color: #93c5fd;
   }
 
-  /* Button tweaks */
-  #themeToggle {
-    border: 1px solid rgba(255,255,255,0.25);
+  /* --- FOOTER --- */
+  footer {
+    color: #94a3b8;
   }
 </style>
 
